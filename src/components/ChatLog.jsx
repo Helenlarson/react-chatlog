@@ -7,3 +7,18 @@ const ChatLog = ({ entries }) => {
     <section className="chat-log">
       {entries.map((entry) => (
         <ChatEntry
+            key={entry.id}
+            sender={entry.sender}
+            body={entry.body}
+            timeStamp={entry.timeStamp}
+            />
+        ))}
+    </section>
+    );
+};
+
+ChatLog.propTypes = {
+    entries: PropTypes.array.isRequired,
+};
+
+export default ChatLog; 
