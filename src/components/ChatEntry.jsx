@@ -2,9 +2,8 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({ sender, body, timeStamp }) => {
+const ChatEntry = ({ id, sender, body, timeStamp, liked, onToggleLike }) => {
   return (
-    // Semantic outer tag + required classes
     <article className="chat-entry local">
       <h2 className="entry-name">{sender}</h2>
 
@@ -12,18 +11,25 @@ const ChatEntry = ({ sender, body, timeStamp }) => {
         <p>{body}</p>
 
         <p className="entry-time">
-          {/* Use the provided TimeStamp component */}
           <TimeStamp time={timeStamp} />
         </p>
+
+        {/* Wave 03: Like button toggles 🤍 <-> ❤️ */}
+        <button type="button" onClick={() => onToggleLike(id)}>
+          {liked ? '❤️' : '🤍'}
+        </button>
       </section>
     </article>
   );
 };
 
 ChatEntry.propTypes = {
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  onToggleLike: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;

@@ -1,6 +1,6 @@
 import './App.css';
-import ChatEntry from './components/ChatEntry';
 import messages from './data/messages.json';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
   // Use the first message to test Wave 1
@@ -9,16 +9,12 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>React Chat Log</h1>
+        <h1>Chat Between {messages[0].sender} and {messages[1].sender} </h1>
+        <h2> 🤍🤍🤍🤍🤍 </h2>
       </header>
 
       <main>
-        {/* Wave 01: Render one ChatEntry */}
-        <ChatEntry
-          sender={firstMessage.sender}
-          body={firstMessage.body}
-          timeStamp={firstMessage.timeStamp}
-        />
+        <ChatLog entries={messages}></ChatLog>
       </main>
     </div>
   );

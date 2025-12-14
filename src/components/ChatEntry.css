@@ -17,7 +17,7 @@ button {
 }
 
 .chat-entry .entry-bubble {
-  background-color: #ffffe0;
+  background-color: #fff0f5;
   border-radius: 30px;
   max-width: 50rem;
   min-width: 10rem;
@@ -27,7 +27,7 @@ button {
 }
 
 .chat-entry .entry-bubble:hover {
-  background-color: #fefea2;
+  background-color: #ffe4ec;
 }
 
 .chat-entry .entry-name {
