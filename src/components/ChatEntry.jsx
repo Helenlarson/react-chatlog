@@ -15,7 +15,10 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, onToggleLike }) => {
         </p>
 
         {/* Wave 03: Like button toggles 🤍 <-> ❤️ */}
-        <button type="button" onClick={() => onToggleLike(id)}>
+        <button
+          type="button" 
+          className="like"
+          onClick={() => onToggleLike(id)}>
           {liked ? '❤️' : '🤍'}
         </button>
       </section>
